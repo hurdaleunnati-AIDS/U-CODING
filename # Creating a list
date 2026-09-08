@@ -1,0 +1,22 @@
+# Creating a list
+my_list = [10, 20, 30, 40]
+
+# 1. append() - adds an element at the end
+my_list.append(50)
+print("After append:", my_list)
+
+# 2. insert() - adds an element at a specified position
+my_list.insert(2, 25)
+print("After insert:", my_list)
+
+# 3. remove() - removes a specified element
+my_list.remove(30)
+print("After remove:", my_list)
+
+# 4. pop() - removes an element from a specified position
+my_list.pop(1)
+print("After pop:", my_list)
+
+# 5. sort() - sorts the list
+my_list.sort()
+print("After sort:", my_list)
