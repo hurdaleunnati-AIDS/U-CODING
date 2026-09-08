@@ -1,0 +1,23 @@
+# Creating a dictionary
+student = {
+    "name": "Unnati",
+    "division": 11,
+    "course": "CSE AI and DS"
+}
+
+# 1. get() - gets the value of a key
+print("Name:", student.get("name"))
+
+# 2. keys() - returns all keys
+print("Keys:", student.keys())
+
+# 3. values() - returns all values
+print("Values:", student.values())
+
+# 4. update() - adds or updates key-value pairs
+student.update({"batch": "B"})
+print("After update:", student)
+
+# 5. pop() - removes a key-value pair
+student.pop("division")
+print("After pop:", student)
