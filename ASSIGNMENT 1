@@ -1,0 +1,8 @@
+dict={
+    "name":"unnati",
+    "division":11,
+    "course":"CSE AI and DS"
+}
+dict["batch"] = "B"
+dict.pop("name")
+dict["college"]="MIT WPU"
