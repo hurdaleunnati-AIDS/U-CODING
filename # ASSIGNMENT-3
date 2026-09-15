@@ -1,0 +1,14 @@
+# TO CHECK WHETHER OR NOT THE TRIANGLE IS A RIGHT ANGLED TRIANGLE
+
+# TO GET INPUT FROM USER OF ALL 3 SIDES
+a=float(input("enter A:"))
+b=float(input("enter B:"))
+c=float(input("enter C:"))
+
+# CONDITION OF RIGHT ANGLE TRIANGLE
+if a**2+b**2==c**2:
+    print("RIGHT ANGLE TRIANGLE")
+else:
+    print("NOT RIGHT ANGLE TRIANGLE")
+
+        
