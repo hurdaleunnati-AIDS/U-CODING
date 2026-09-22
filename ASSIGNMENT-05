@@ -1,0 +1,12 @@
+# WRITING A PYTHON PROGRAM TO CHECK THAT A STRING CONTAINS (a-z A-Z 0-9) SET OF CHARACTERS 
+
+# GET USER INPUT
+string=input("Enter a string:")
+
+# APPLY IF ELSE STATEMENT AND GET VARIABLE DECLARATION
+if re.fullmatch(r'[a-zA-Z0-9]+',string):
+    print("Strings contains a-z A-Z 0-9 set of characters")
+else:
+
+# GET OUTPUT
+    print("Strings DOES NOT contains a-z A-Z 0-9 set of characters")
