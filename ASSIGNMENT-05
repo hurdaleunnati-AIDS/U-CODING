@@ -1,5 +1,5 @@
 # WRITING A PYTHON PROGRAM TO CHECK THAT A STRING CONTAINS (a-z A-Z 0-9) SET OF CHARACTERS 
-
+import re
 # GET USER INPUT
 string=input("Enter a string:")
 
