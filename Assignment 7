@@ -1,0 +1,47 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a small dataset and save it as CSV
+data = {
+    "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "Sales": [200, 250, 300, 280, 350, 400],
+    "Profit": [50, 70, 90, 80, 110, 130],
+    "Expenses": [150, 180, 210, 200, 240, 270]
+}
+pd.DataFrame(data).to_csv("data.csv", index=False)
+
+# Load the dataset
+df = pd.read_csv("data.csv")
+print(df)
+
+# 1. Line plot
+plt.figure(figsize=(6, 4))
+plt.plot(df["Month"], df["Sales"], marker="o", color="blue")
+plt.title("Line Plot - Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.grid(True)
+plt.show()
+
+# 2. Bar plot
+plt.figure(figsize=(6, 4))
+plt.bar(df["Month"], df["Profit"], color="green")
+plt.title("Bar Plot - Monthly Profit")
+plt.xlabel("Month")
+plt.ylabel("Profit")
+plt.show()
+
+# 3. Scatter plot
+plt.figure(figsize=(6, 4))
+plt.scatter(df["Sales"], df["Profit"], color="red")
+plt.title("Scatter Plot - Sales vs Profit")
+plt.xlabel("Sales")
+plt.ylabel("Profit")
+plt.show()
+
+# 4. Heatmap (Seaborn)
+plt.figure(figsize=(6, 4))
+sns.heatmap(df[["Sales", "Profit", "Expenses"]].corr(), annot=True, cmap="coolwarm")
+plt.title("Heatmap - Correlation")
+plt.show()
