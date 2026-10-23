@@ -1,0 +1,46 @@
+import pandas as pd
+import numpy as np
+
+# Create sample data (with missing values and duplicates)
+data = {
+    "ID": [1, 2, 3, 4, 5, 5, 6, 7, 8, 9],
+    "Name": ["Amit", "Neha", "Rahul", "Priya", "Sneha", "Sneha",
+             "Karan", "Pooja", "Vikas", "Anita"],
+    "Marks": [78, 85, np.nan, 92, 67, 67, 74, np.nan, 88, 55],
+    "City": ["Pune", "Mumbai", "Nashik", None, "Pune", "Pune",
+             "Nagpur", "Mumbai", "Pune", None],
+    "Remarks": ["ok"] * 10
+}
+pd.DataFrame(data).to_csv("students.csv", index=False)
+
+# Load file (use pd.read_excel("file.xls") for Excel files)
+df = pd.read_csv("students.csv")
+
+# Explore data
+print(df.head())
+print(df.shape)
+df.info()
+print(df.describe())
+
+# Handle missing values
+print(df.isnull().sum())
+print(df.dropna())                       # drop rows with missing values
+
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())   # fill numeric
+df["City"] = df["City"].fillna("Unknown")              # fill text
+
+# Remove duplicates and irrelevant column
+print(df.duplicated().sum())
+df = df.drop_duplicates()
+df = df.drop(columns=["Remarks"])
+df = df.reset_index(drop=True)
+print(df)
+
+# Selection and filtering using loc[]
+print(df.loc[:, ["Name", "Marks"]])
+print(df.loc[df["Marks"] > 75])
+print(df.loc[(df["City"] == "Pune") & (df["Marks"] >= 70), ["Name", "Marks"]])
+print(df.loc[0:2])
+
+# Save cleaned data
+df.to_csv("students_cleaned.csv", index=False)
